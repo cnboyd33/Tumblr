@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="dPl-pk-359">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,11 +22,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="239" id="1HH-GM-VZd" customClass="photoCell" customModule="tumblr_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="239" id="1HH-GM-VZd" customClass="photoCell" customModule="tumblr_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="239"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1HH-GM-VZd" id="zCB-v7-UyR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="238.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="238.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="N7T-jh-lm7">
@@ -37,6 +37,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="myPhotoView" destination="N7T-jh-lm7" id="DPz-c5-lC6"/>
+                                            <segue destination="Cbl-gY-2Mp" kind="push" id="iF9-0V-jQJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -44,11 +45,51 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="3oT-dZ-JXT"/>
                     <connections>
                         <outlet property="tableView" destination="zV6-px-WYf" id="ukf-rH-Bw2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672.5" y="154.5"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="Oql-ro-ESF">
+            <objects>
+                <viewController id="Cbl-gY-2Mp" customClass="PhotoDetailsViewController" customModule="tumblr_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lOn-Vt-rmy" customClass="photoCell" customModule="tumblr_app" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="KK6-wo-kAb">
+                                <rect key="frame" x="16" y="0.0" width="343" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="B5P-Ya-Ra5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8C3-XP-mRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223.5" y="158.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ri1-Wa-VDC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dPl-pk-359" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a0U-8e-6aL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yKP-NE-tLw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaK-5e-e5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85.5" y="154.5"/>
         </scene>
