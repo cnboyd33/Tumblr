@@ -7,16 +7,26 @@
 //
 
 import UIKit
-var photoURL: String = ""
+
 
 class PhotoDetailsViewController: UIViewController {
+    @IBOutlet weak var PhotosImageView: UIImageView!
+    var photoURL: String = ""
+    var post: [String: Any]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let photos = post?["photos"] as? [[String: Any]]{
+            let photo = photos[0]
+            let originalSize = photo["original_size"] as! [String: Any]
+            let urlString = originalSize["url"] as! String
+            let url = URL(string: urlString)
+            
+            PhotosImageView.af_setImage(withURL: url!)
     }
-
+}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -33,4 +43,6 @@ class PhotoDetailsViewController: UIViewController {
     }
     */
 
-}
+    }
+
+
